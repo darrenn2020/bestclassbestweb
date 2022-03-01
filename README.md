@@ -1,2 +1,2 @@
 # bestclassbestweb
-A Small Website
+A small website, but a great website.
