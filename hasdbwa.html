@@ -39,14 +39,11 @@
 
 --->
 
-
 <html lang="en">
-<meta charset="UTF-8">
-<title>Class</title>
+<meta charset="UTF-8"><title>Class</title>
 <html>
 <head>
   <!-- Navigation (Stays on Top) -->
-  <div id="home" class="w3-content">
   <div class="w3-top w3-bar w3-black">
     <a href="#home" class="w3-bar-item w3-button">Top</a>
     <a href="#end" class="w3-bar-item w3-button">Bottom</a>
@@ -145,8 +142,8 @@
 </head>
 <body>
 
-
   <!-- Start Content -->
+  <div id="home" class="w3-content">
     <script src="https://www.w3schools.com/lib/w3.js"></script>
     <body>
 
@@ -1524,21 +1521,19 @@ Profile Cards Of Students
         </div>
       </div>
     </div>
-
-    <br><br><br>
-
+    <br><br>
     <div id="text">
 
       <html>
       <body>
-        <center>
-          <button style="color: black" onclick="typeWriter()">What Is This Class?</button>
-        </center>
+
+        <button style="color: black" onclick="typeWriter()">What Is This Class?</button>
+
         <p id="demo"></p>
 
         <script>
         var i = 0;
-        var txt = ' The Best Class';
+        var txt = '... The Best Class';
         var speed = 50;
 
         function typeWriter() {
@@ -1557,6 +1552,37 @@ Profile Cards Of Students
 
       <html>
       <head>
+        <style>
+        .container {
+          height: 200px;
+          position: relative;
+          border: 3px solid green;
+        }
+
+        .center {
+          margin: 0;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+        }
+        </style>
+      </head>
+      <body>
+
+
+        <div class="container">
+          <div class="center">
+            <p>Put Text Here:</p>
+          </div>
+        </div>
+
+      </body>
+      </html>
+      <br><br>
+      <html>
+      <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
         .collapsible {
@@ -1572,7 +1598,7 @@ Profile Cards Of Students
         }
 
         .active, .collapsible:hover {
-          background-color: #FF0000;
+          background-color: darkgreen;
         }
 
         .content {
@@ -1585,208 +1611,165 @@ Profile Cards Of Students
     </head>
     <body>
 
-
-      <button type="button" class="collapsible">Open Collapsible</button>
+      <button type="button" class="collapsible">Open Section 1</button>
       <div class="content">
-        <p>Happy Birthday</p>
+        <p>Hello</p>
       </div>
+      <button type="button" class="collapsible">Open Section 2</button>
+      <div class="content">
+        <p>Change Text</p>
+      </div>
+      <button type="button" class="collapsible">Open Section 3</button>
+      <div class="content">
+        <p>TestingTestingTestingTestingTestingTestingTesting
+          TestingTestingTestingTestingTestingTestingTestingTestingTestingTesting
+          TestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTesting
+          TestingTesting</p>
+        </div>
 
-      <script>
-      var coll = document.getElementsByClassName("collapsible");
-      var i;
+        <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
 
-      for (i = 0; i < coll.length; i++) {
-        coll[i].addEventListener("click", function() {
-          this.classList.toggle("active");
-          var content = this.nextElementSibling;
-          if (content.style.display === "block") {
-            content.style.display = "none";
-          } else {
-            content.style.display = "block";
-          }
-        });
-      }
-      </script>
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "block";
+            }
+          });
+        }
+        </script>
 
-      <html>
-      <head>
-      </head>
-      <body>
-        <br>
-        <html lang="en">
+        <html>
+        <head>
+        </head>
         <body>
-          <section>
-            <center>
-              <div class="tile"><h1><b>Thank You For Visiting Our Website!</b></h1></div>
-            </center>
-          </section>
-        </body>
-        </html>
-        <style>
-        .tile {
-          height:100px;
-          margin-top:40px;
-          background: skyblue;
-          -webkit-transform: translateY(50px) rotate(-5deg) translateZ(0);
-          transform: translateY(50px) rotate(-5deg) translateZ(0);
-          -webkit-transition-delay: .3s;
-          -o-transition-delay: .3s;
-          transition-delay: .3s;
-          -webkit-transition: .4s;
-          -o-transition: .4s;
-          transition: .4s;
-          opacity: 0;
-          color: darkgreen;
-        }
-        .bottom-right.inView {
-          opacity: 1;
-          -webkit-transform: translateY(0px) rotate(0deg) translateZ(0);
-          transform: translateY(0px) rotate(0deg) translateZ(0);
-        }
-        .inView {
-          opacity: 1;
-          -webkit-transform: translateY(0px) rotate(0deg) translateZ(0);
-          transform: translateY(0px) rotate(0deg) translateZ(0);
-        }
-        section {
-          padding:20px;
-        }
-      </style>
-      <script>
-      let elementsArray = document.querySelectorAll(".tile");
-      console.log(elementsArray);
-      window.addEventListener('scroll', fadeIn );
-      function fadeIn() {
-        for (var i = 0; i < elementsArray.length; i++) {
-          var elem = elementsArray[i]
-          var distInView = elem.getBoundingClientRect().top - window.innerHeight + 20;
-          if (distInView < 0) {
-            elem.classList.add("inView");
-          } else {
-            elem.classList.remove("inView");
+          <br><br><br>
+
+
+
+
+
+          <center><h1>Did You Enjoy This Website?</h1></center>
+          <center>
+            <script src="https://use.fontawesome.com/fe459689b4.js"></script>
+            <button class="btn" id="green"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
+            <button class="btn" id="red"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></button>
+          </center>
+
+          <style>
+          body{
+            margin: 40px;
           }
-        }
-      }
-      fadeIn();
-    </script>
-    <br><br>
 
-    <center>
-      <script src="https://use.fontawesome.com/fe459689b4.js"></script>
-      <button class="btn" id="green"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
-      <button class="btn" id="red"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></button>
-    </center>
+          button{
+            cursor: pointer;
+            outline: 0;
+            color: #AAA;
 
-    <style>
-    body{
-      margin: 40px;
-    }
+          }
 
-    button{
-      cursor: pointer;
-      outline: 0;
-      color: #AAA;
+          .btn:focus {
+            outline: none;
+          }
 
-    }
+          .green{
+            color: green;
+          }
 
-    .btn:focus {
-      outline: none;
-    }
+          .red{
+            color: red;
+          }
+          </style>
+          <script>
+          var btn1 = document.querySelector('#green');
+          var btn2 = document.querySelector('#red');
 
-    .green{
-      color: green;
-    }
+          btn1.addEventListener('click', function() {
 
-    .red{
-      color: red;
-    }
-    </style>
-    <script>
-    var btn1 = document.querySelector('#green');
-    var btn2 = document.querySelector('#red');
+            if (btn2.classList.contains('red')) {
+              btn2.classList.remove('red');
+            }
+            this.classList.toggle('green');
 
-    btn1.addEventListener('click', function() {
+          });
 
-      if (btn2.classList.contains('red')) {
-        btn2.classList.remove('red');
-      }
-      this.classList.toggle('green');
+          btn2.addEventListener('click', function() {
 
-    });
+            if (btn1.classList.contains('green')) {
+              btn1.classList.remove('green');
+            }
+            this.classList.toggle('red');
 
-    btn2.addEventListener('click', function() {
-
-      if (btn1.classList.contains('green')) {
-        btn1.classList.remove('green');
-      }
-      this.classList.toggle('red');
-
-    });
+          });
 
 
-    </script>
+          </script>
 
-    <br><center><form
-      action="https://docs.google.com/forms/d/e/1FAIpQLSfwKRwQXTG4f-uTCKfayO3jXKkxtIruVwdHgyx56p4xwpKylA/viewform?vc=0&c=0&w=1&flr=0">
-      <input type = "submit" value="Give Us Feedback" /></center>
+          <br><center><form
+            action="https://docs.google.com/forms/d/e/1FAIpQLSfwKRwQXTG4f-uTCKfayO3jXKkxtIruVwdHgyx56p4xwpKylA/viewform?vc=0&c=0&w=1&flr=0">
+            <input type = "submit" value="If You Want To Make A Complaint, Press This Button" /></center>
 
 
-      <style>
-      html {
-        height: 100%;
-        box-sizing: border-box;
-      }
+            <style>
+            html {
+              height: 100%;
+              box-sizing: border-box;
+            }
 
-      *,
-      *:before,
-      *:after {
-        box-sizing: inherit;
-      }
+            *,
+            *:before,
+            *:after {
+              box-sizing: inherit;
+            }
 
-      body {
-        position: relative;
-        margin: 0;
-        padding-bottom: 6rem;
-        min-height: 100%;
-        font-family: "Helvetica Neue", Arial, sans-serif;
-      }
+            body {
+              position: relative;
+              margin: 0;
+              padding-bottom: 6rem;
+              min-height: 100%;
+              font-family: "Helvetica Neue", Arial, sans-serif;
+            }
 
-      .demo {
-        margin: 0 auto;
-        padding-top: 32px;
-        max-width: 640px;
-        width: 100%;
-      }
+            .demo {
+              margin: 0 auto;
+              padding-top: 32px;
+              max-width: 640px;
+              width: 100%;
+            }
 
-      .demo h1 {
-        margin-top: 0;
-      }
+            .demo h1 {
+              margin-top: 0;
+            }
 
-      /**
-      * Footer Styles
-      */
+            /**
+            * Footer Styles
+            */
 
-      .footer {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        padding: 1rem;
-        background-color: #0091ff;
-        text-align: center;
-      }
-      </style>
+            .footer {
+              position: absolute;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              padding: 1rem;
+              background-color: #0091ff;
+              text-align: center;
+            }
+            </style>
 
-      <div class="footer">This website was made by <strong>Darren And Austin</strong></div>
+            <div class="footer">This website was made by <strong>Darren And Austin</strong></div>
 
 
 
-      <!--Chat Bot-->
+            <!--Chat Bot-->
 
-      <script SameSite="None; Secure" src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.js"></script>
-      <script>
-      var myLandbot = new Landbot.Popup({
-        configUrl: 'https://chats.landbot.io/v3/H-1156499-SXEMNR4BDSZZUJCD/index.json',
-      });
-    </script>
-    <div id="end">
+            <script SameSite="None; Secure" src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.js"></script>
+            <script>
+            var myLandbot = new Landbot.Popup({
+              configUrl: 'https://chats.landbot.io/v3/H-1156499-SXEMNR4BDSZZUJCD/index.json',
+            });
+          </script>
