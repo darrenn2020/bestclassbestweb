@@ -2,22 +2,51 @@
 <title>Password</title>
 <html>
 
-
+<center>
+  <h1><b><a class='center'>Welcome</a></b></h1>
+  <h3><b><a class='center'>Press The Button Below To Enter A Password</a></b></h3>
+  <button class='button' onclick=wait()>Enter Password</button>
+</center>
+<style>
+body{
+  background: skyblue;
+}
+.center{
+  color: #DD571C;
+}
+.button{
+  border-radius: 27px;
+  background: #73AD21;
+  padding: 10px;
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+}
+</style>
 <head>
   <script>
-  var passwd = window.prompt("Enter The Password To Get To The Greatest Website Ever: ");
-  if (passwd == '6/7Class208') {
-    window.location.href = 'w.html'
+  function ask(){
+    var passwd = window.prompt("Enter The Password To Get To The Greatest Website Ever: ");
+    if (passwd == '6/7Class208') {
+      window.location.href = 'w.html'
 
-  } else if(passwd == 'QuizMe') {
-    window.location.href = 'quiz.html'
-  }else{
-    window.location.href = 'wrong.html'
+    } else if(passwd == 'QuizMe') {
+      window.location.href = 'quiz.html'
+
+    } else if(passwd == '') {
+      alert('Please Enter A Password');
+
+    } else if(passwd == null) {
+
+    }else{
+      window.location.href = 'wrong.html'
+    }
   }
 
+  function wait(){
+    setTimeout(ask, 100);
+  }
   </script>
-
-  <title> Welcome </title>
 </head>
 
 <body>
