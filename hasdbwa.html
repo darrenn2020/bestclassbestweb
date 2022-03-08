@@ -43,249 +43,250 @@
 <meta charset="UTF-8"><title>Class</title>
 <html>
 <head>
-  <!-- Navigation (Stays on Top) -->
-  <div class="w3-top w3-bar w3-black">
-    <a href="#home" class="w3-bar-item w3-button">Top</a>
-    <a href="#end" class="w3-bar-item w3-button">Bottom</a>
-    <a href="#people" class="w3-bar-item w3-button">People</a>
-    <button style="color: black" onclick="myFunction()">🌓Dark/Light Mode</button>
-    <span class="hi"><a href="aboutus.html">ABOUT</a>
-      <script>
-      function myFunction() {
-        var element = document.body;
-        element.classList.toggle("dark-mode");
-      }
-      </script>
-    </div>
-
-
-  </body>
-  </html>
-
-  <html>
-  <head>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="index.css">
-    </head>
-    <body>
-      <div>
-        <br><br><b><div id="Clock" >00:00:00</div></b>
+  <div id="home" class="w3-content">
+    <!-- Navigation (Stays on Top) -->
+    <div class="w3-top w3-bar w3-black">
+      <a href="#home" class="w3-bar-item w3-button">Top</a>
+      <a href="#end" class="w3-bar-item w3-button">Bottom</a>
+      <a href="#people" class="w3-bar-item w3-button">People</a>
+      <button style="color: black" onclick="myFunction()">🌓Dark/Light Mode</button>
+      <span class="hi"><a href="aboutus.html">ABOUT</a>
+        <script>
+        function myFunction() {
+          var element = document.body;
+          element.classList.toggle("dark-mode");
+        }
+        </script>
       </div>
-      <script src= index.js></script>
+
+
     </body>
     </html>
-    <script>
 
-    setInterval(displayTime, 1000);
+    <html>
+    <head>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="index.css">
+      </head>
+      <body>
+        <div>
+          <br><br><b><div id="Clock" >00:00:00</div></b>
+        </div>
+        <script src= index.js></script>
+      </body>
+      </html>
+      <script>
 
-    function displayTime() {
+      setInterval(displayTime, 1000);
 
-      const timeNow = new Date();
+      function displayTime() {
 
-      let hoursOfDay = timeNow.getHours();
-      let minutes = timeNow.getMinutes();
-      let seconds = timeNow.getSeconds();
-      let weekDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-      let today = weekDay[timeNow.getDay()];
-      let months = timeNow.toLocaleString("default", {
-        month: "long"
-      });
-      let year = timeNow.getFullYear();
-      let period = " AM";
+        const timeNow = new Date();
 
-      if (hoursOfDay > 12) {
-        hoursOfDay-= 12;
-        period = " PM";
+        let hoursOfDay = timeNow.getHours();
+        let minutes = timeNow.getMinutes();
+        let seconds = timeNow.getSeconds();
+        let weekDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        let today = weekDay[timeNow.getDay()];
+        let months = timeNow.toLocaleString("default", {
+          month: "long"
+        });
+        let year = timeNow.getFullYear();
+        let period = " AM";
+
+        if (hoursOfDay > 12) {
+          hoursOfDay-= 12;
+          period = " PM";
+        }
+
+        if (hoursOfDay === 0) {
+          hoursOfDay = 12;
+          period = " AM";
+        }
+
+        hoursOfDay = hoursOfDay < 10 ? "0" + hoursOfDay : hoursOfDay;
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        let time = hoursOfDay + ":" + minutes + ":" + seconds + period;
+
+        document.getElementById('Clock').innerHTML = time + " " ;
+
       }
+      displayTime();
+      </script>
 
-      if (hoursOfDay === 0) {
-        hoursOfDay = 12;
-        period = " AM";
-      }
-
-      hoursOfDay = hoursOfDay < 10 ? "0" + hoursOfDay : hoursOfDay;
-      minutes = minutes < 10 ? "0" + minutes : minutes;
-      seconds = seconds < 10 ? "0" + seconds : seconds;
-
-      let time = hoursOfDay + ":" + minutes + ":" + seconds + period;
-
-      document.getElementById('Clock').innerHTML = time + " " ;
-
-    }
-    displayTime();
-  </script>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <div class="loader_bg">
-    <div class="loader"></div>
-  </div>
-
-
-  <style>
-  body {
-    padding: 25px;
-    background-color: antiquewhite;
-    color: black;
-    font-size: 25px;
-  }
-
-  .dark-mode {
-    background-color: #292929;
-    color: white;
-  }
-
-</style>
-</head>
-<body>
-
-  <!-- Start Content -->
-  <div id="home" class="w3-content">
-    <script src="https://www.w3schools.com/lib/w3.js"></script>
-    <body>
-
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <div class="loader_bg">
+        <div class="loader"></div>
+      </div>
 
 
       <style>
-      .knockout {
-        position: relative;
-        display: inline-block;
+      body {
+        padding: 25px;
+        background-color: antiquewhite;
+        color: black;
+        font-size: 25px;
       }
 
-      .knockout-content {
-        display: none;
-        position: absolute;
-        min-width: 160px;
-        background-color: #0000FF;
-        color: #FF0000;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        padding: 12px 16px;
-        z-index: 1;
+      .dark-mode {
+        background-color: #292929;
+        color: white;
       }
 
-      .knockout:hover .knockout-content {
-        display: block;
-      }
-      </style>
-    </head>
-    <body>
-      <center>
-        <div id = "spin" class="knockout">
-          <h1><font face = "Comic sans MS" size = "7" color = "#3D3DEA">The Greatest Class Ever <span></span></font></h1>
-        </div>
+    </style>
+  </head>
+  <body>
 
-        <div class="unreal">
-          <h1>Part 2</h1>
-        </div>
+    <!-- Start Content -->
+    <div id="home" class="w3-content">
+      <script src="https://www.w3schools.com/lib/w3.js"></script>
+      <body>
+
+
+
         <style>
-        .unreal {
-          font-family: "Exo 2";
-          font-weight: bold;
-          color: #e68a1a;
-
-          animation: unreal 1.5s infinite;
+        .knockout {
+          position: relative;
+          display: inline-block;
         }
 
-        @keyframes unreal {
-          0% {opacity: 0; transform: translateY(-20px);}
-          50% {opacity: 1; transform: translateY(0);}
-          100% {opacity: 0; transform: translateY(-20px);}
+        .knockout-content {
+          display: none;
+          position: absolute;
+          min-width: 160px;
+          background-color: #0000FF;
+          color: #FF0000;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          padding: 12px 16px;
+          z-index: 1;
         }
 
-        .unreal {
-          animation-name: unreal;
+        .knockout:hover .knockout-content {
+          display: block;
         }
-
-
-
         </style>
+      </head>
+      <body>
+        <center>
+          <div id = "spin" class="knockout">
+            <h1><font face = "Comic sans MS" size = "7" color = "#3D3DEA">The Greatest Class Ever <span></span></font></h1>
+          </div>
 
+          <div class="unreal">
+            <h1>Part 2</h1>
+          </div>
+          <style>
+          .unreal {
+            font-family: "Exo 2";
+            font-weight: bold;
+            color: #e68a1a;
+
+            animation: unreal 1.5s infinite;
+          }
+
+          @keyframes unreal {
+            0% {opacity: 0; transform: translateY(-20px);}
+            50% {opacity: 1; transform: translateY(0);}
+            100% {opacity: 0; transform: translateY(-20px);}
+          }
+
+          .unreal {
+            animation-name: unreal;
+          }
+
+
+
+          </style>
+
+        </div>
       </div>
     </div>
-  </div>
-  <style>
-  html{
+    <style>
+    html{
 
-  }
-
-  .border{
-    padding: 5px;
-    background: linear-gradient(110deg, #ffeead 33%, rgba(0, 0, 0, 0) 33%), linear-gradient(110deg, #C5E7D7 34%, #0000FF 34%);
-    background-size: 400% 400%;
-    height: 400px;
-    background-position: 25% 50%;
-    -webkit-animation: Gradient 15s ease infinite;
-    -moz-animation: Gradient 5s ease infinite;
-  }
-  .inner-cutout{
-    padding: 40px 0;
-    display: block;
-    background-color:#ff6f69;/*#ff6f69*/
-
-    margin: 2%;
-    padding-bottom: 40px;
-    height: 300px;
-    background: radial-gradient(#ff6f69, #ff8b87);
-    background-size: 300%;
-    background-position:50% 50%;
-
-  }
-  .knockout {
-
-    vertical-align: middle;
-    text-align: center;
-    font-family: 'Pacifico', cursive;
-    font-size:50pt;
-    color: blue;
-    color: #fff;
-    background: linear-gradient(110deg, #FF0000 33%, rgba(0, 0, 0, 0) 33%), linear-gradient(110deg, #0000FF 35%, #88d8b0 34%);
-    background-size: 400%;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-  }
-  .knockout{
-    animation: Gradient 5s ease infinite;
-    -webkit-animation: Gradient 15s ease infinite;
-    -moz-animation: Gradient 5s ease infinite;
-  }
-
-  @-webkit-keyframes Gradient {
-    0% {
-      background-position: 30% 50%
-    }
-    50% {
-      background-position: 25% 50%
-    }
-    100% {
-      background-position: 30% 50%
     }
 
-  }
+    .border{
+      padding: 5px;
+      background: linear-gradient(110deg, #ffeead 33%, rgba(0, 0, 0, 0) 33%), linear-gradient(110deg, #C5E7D7 34%, #0000FF 34%);
+      background-size: 400% 400%;
+      height: 400px;
+      background-position: 25% 50%;
+      -webkit-animation: Gradient 15s ease infinite;
+      -moz-animation: Gradient 5s ease infinite;
+    }
+    .inner-cutout{
+      padding: 40px 0;
+      display: block;
+      background-color:#ff6f69;/*#ff6f69*/
+
+      margin: 2%;
+      padding-bottom: 40px;
+      height: 300px;
+      background: radial-gradient(#ff6f69, #ff8b87);
+      background-size: 300%;
+      background-position:50% 50%;
+
+    }
+    .knockout {
+
+      vertical-align: middle;
+      text-align: center;
+      font-family: 'Pacifico', cursive;
+      font-size:50pt;
+      color: blue;
+      color: #fff;
+      background: linear-gradient(110deg, #FF0000 33%, rgba(0, 0, 0, 0) 33%), linear-gradient(110deg, #0000FF 35%, #88d8b0 34%);
+      background-size: 400%;
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+    }
+    .knockout{
+      animation: Gradient 5s ease infinite;
+      -webkit-animation: Gradient 15s ease infinite;
+      -moz-animation: Gradient 5s ease infinite;
+    }
+
+    @-webkit-keyframes Gradient {
+      0% {
+        background-position: 30% 50%
+      }
+      50% {
+        background-position: 25% 50%
+      }
+      100% {
+        background-position: 30% 50%
+      }
+
+    }
 
 
 
-  .main{
-    width: 500px;
-    height: 800px;
-    margin-left: 40%;
-    margin-right:40%;
-    margin-top: 10%;
-  }
+    .main{
+      width: 500px;
+      height: 800px;
+      margin-left: 40%;
+      margin-right:40%;
+      margin-top: 10%;
+    }
 
-</style>
+  </style>
 
 
-<!-- Slides -->
-<center>
-  <img class="slides" src="https://acegif.com/wp-content/gifs/raining-money-8.gif" width="100%">
-  <img class="slides" src="https://memegenerator.net/img/instances/66867941.jpg" width="71%">
-  <img class="slides" src="https://www.prairiecoastequipment.com/webres/File/Social/Blog/Canada%20Day/1_-_Great_Canadian_Stereotype%5B2%5D.png" width="100%">
-</center>
-<script>
-w3.slideshow(".slides", 1700);
+  <!-- Slides -->
+  <center>
+    <img class="slides" src="https://acegif.com/wp-content/gifs/raining-money-8.gif" width="100%">
+    <img class="slides" src="https://memegenerator.net/img/instances/66867941.jpg" width="71%">
+    <img class="slides" src="https://www.prairiecoastequipment.com/webres/File/Social/Blog/Canada%20Day/1_-_Great_Canadian_Stereotype%5B2%5D.png" width="100%">
+  </center>
+  <script>
+  w3.slideshow(".slides", 1700);
 </script>
 
 <center>
@@ -327,425 +328,425 @@ function colour() {
 <script src="https://www.w3schools.com/lib/w3.js"></script>
 <body>
 
-  <div id="home" class="w3-content">
 
-    <!-- About -->
-    <div class="view view-first">
-      <img src="https://lh3.googleusercontent.com/-LLP_b7gmXfE/YaE3y0Z-PNI/AAAAAAAAAvM/lDO5hEsF4xQ6OoG945DIO2SZrUmXYwXtACMACGAYYCw/s1280/pixton-class-photo-ms-p-s-grade-6-7-class%2B%25283%2529.png" />
-      <div class="mask">
-        <h2>About The Class</h2>
-        <p>A class with amazing people</p>
-        <a href="#text" class="info">Read More</a>
-      </div>
+
+  <!-- About -->
+  <div class="view view-first">
+    <img src="https://lh3.googleusercontent.com/-LLP_b7gmXfE/YaE3y0Z-PNI/AAAAAAAAAvM/lDO5hEsF4xQ6OoG945DIO2SZrUmXYwXtACMACGAYYCw/s1280/pixton-class-photo-ms-p-s-grade-6-7-class%2B%25283%2529.png" />
+    <div class="mask">
+      <h2>About The Class</h2>
+      <p>A class with amazing people</p>
+      <a href="#text" class="info">Read More</a>
     </div>
+  </div>
 
 
-    <html>
-    <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <style>
-      body {font-family: Arial, Helvetica, sans-serif;}
-
-      #myImg {
-        border-radius: 5px;
-        cursor: zoom-in;
-        transition: 0.3s;
-      }
-
-      #myImg:hover {opacity: 0.7;}
-
-
-      .modal {
-        display: none;
-        position: fixed;
-        z-index: 1;
-        padding-top: 100px;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgb(0,0,0);
-        background-color: rgba(0,0,0,0.9);
-      }
-
-
-      .modal-content {
-        margin: auto;
-        display: block;
-        width: 80%;
-        max-width: 700px;
-      }
-
-
-      #caption {
-        margin: auto;
-        display: block;
-        width: 80%;
-        max-width: 700px;
-        text-align: center;
-        color: #ccc;
-        padding: 10px 0;
-        height: 150px;
-      }
-
-      .modal-content, #caption {
-        -webkit-animation-name: zoom;
-        -webkit-animation-duration: 0.6s;
-        animation-name: zoom;
-        animation-duration: 0.6s;
-      }
-
-      @-webkit-keyframes zoom {
-        from {-webkit-transform:scale(0)}
-        to {-webkit-transform:scale(1)}
-      }
-
-      @keyframes zoom {
-        from {transform:scale(0)}
-        to {transform:scale(1)}
-      }
-
-
-      .close {
-        position: absolute;
-        top: 15px;
-        right: 35px;
-        color: #f1f1f1;
-        font-size: 40px;
-        font-weight: bold;
-        transition: 0.3s;
-      }
-
-      .close:hover,
-      .close:focus {
-        color: #bbb;
-        text-decoration: none;
-        cursor: pointer;
-      }
-
-
-      @media only screen and (max-width: 700px){
-        .modal-content {
-          width: 100%;
-        }
-      }
-      </style>
-    </head>
-    <body>
-
-      <img id="myImg" src="https://mypenmyfriend.com/wp-content/uploads/2021/04/BN-OA698_mcmani_P_20160516115635.jpg" alt="The Only Class With A Perfect Score" style="width:90%;max-width:270px">
-
-
-      <div id="myModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="img01">
-        <div id="caption"></div>
-      </div>
-
-      <script>
-
-      var modal = document.getElementById("myModal");
-
-
-      var img = document.getElementById("myImg");
-      var modalImg = document.getElementById("img01");
-      var captionText = document.getElementById("caption");
-      img.onclick = function(){
-        modal.style.display = "block";
-        modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
-      }
-
-
-      var span = document.getElementsByClassName("close")[0];
-
-
-      span.onclick = function() {
-        modal.style.display = "none";
-      }
-      </script>
-
-    </body>
-    </html>
-
-
-
-
-
+  <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-    html {
-      min-height: 100%;
+    body {font-family: Arial, Helvetica, sans-serif;}
+
+    #myImg {
+      border-radius: 5px;
+      cursor: zoom-in;
+      transition: 0.3s;
     }
 
-    #hover {
-      color: #FF0000;
-    }
+    #myImg:hover {opacity: 0.7;}
 
-    h2#testimonials {
-      color: #fffae3;
-    }
 
-    div#all {
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      padding-top: 100px;
+      left: 0;
+      top: 0;
       width: 100%;
       height: 100%;
+      overflow: auto;
+      background-color: rgb(0,0,0);
+      background-color: rgba(0,0,0,0.9);
     }
 
 
-    /* generic css */
-
-    .view {
-      margin: 10px;
-      float: left;
-      border: 10px solid #fff;
-      overflow: hidden;
-      position: relative;
-      text-align: center;
-      box-shadow: 1px 1px 2px #FFF;
-      cursor: default;
-      background: #fff url(../images/bgimg.jpg) no-repeat center center
-    }
-
-    .view .mask,
-    .view .content {
-      width: 300px;
-      height: 200px;
-      position: absolute;
-      overflow: hidden;
-      top: 0;
-      left: 0
-    }
-
-    .view img {
+    .modal-content {
+      margin: auto;
       display: block;
-      position: relative
+      width: 80%;
+      max-width: 700px;
     }
 
-    .view h2 {
-      text-transform: uppercase;
-      color: #FFF;
+
+    #caption {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
       text-align: center;
-      position: relative;
-      font-size: 17px;
-      font-family: Raleway, serif;
-      padding: 10px;
-      margin: 20px 0 0 0
+      color: #ccc;
+      padding: 10px 0;
+      height: 150px;
     }
 
-    .view p {
-      font-family: Merriweather, serif;
-      font-style: italic;
-      font-size: 14px;
-      position: relative;
-      color: #fff;
-      padding: 0px 20px 0px;
-      text-align: center
+    .modal-content, #caption {
+      -webkit-animation-name: zoom;
+      -webkit-animation-duration: 0.6s;
+      animation-name: zoom;
+      animation-duration: 0.6s;
     }
 
-    .view a.info {
-      display: inline-block;
+    @-webkit-keyframes zoom {
+      from {-webkit-transform:scale(0)}
+      to {-webkit-transform:scale(1)}
+    }
+
+    @keyframes zoom {
+      from {transform:scale(0)}
+      to {transform:scale(1)}
+    }
+
+
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #bbb;
       text-decoration: none;
-      padding: 7px 14px;
-      background: #000;
-      color: #fff;
-      font-family: Raleway, serif;
-      text-transform: uppercase;
-      box-shadow: 0 0 1px #000
-    }
-
-    .view a.info:hover {
-      box-shadow: 0 0 5px #000
+      cursor: pointer;
     }
 
 
+    @media only screen and (max-width: 700px){
+      .modal-content {
+        width: 100%;
+      }
+    }
+    </style>
+  </head>
+  <body>
+
+    <img id="myImg" src="https://mypenmyfriend.com/wp-content/uploads/2021/04/BN-OA698_mcmani_P_20160516115635.jpg" alt="The Only Class With A Perfect Score" style="width:90%;max-width:270px">
+
+
+    <div id="myModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="img01">
+      <div id="caption"></div>
+    </div>
+
+    <script>
+
+    var modal = document.getElementById("myModal");
+
+
+    var img = document.getElementById("myImg");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function(){
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+    }
+
+
+    var span = document.getElementsByClassName("close")[0];
+
+
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    </script>
+
+  </body>
+  </html>
+
+
+
+
+
+  <style>
+  html {
+    min-height: 100%;
+  }
+
+  #hover {
+    color: #FF0000;
+  }
+
+  h2#testimonials {
+    color: #fffae3;
+  }
+
+  div#all {
+    width: 100%;
+    height: 100%;
+  }
+
+
+  /* generic css */
+
+  .view {
+    margin: 10px;
+    float: left;
+    border: 10px solid #fff;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    box-shadow: 1px 1px 2px #FFF;
+    cursor: default;
+    background: #fff url(../images/bgimg.jpg) no-repeat center center
+  }
+
+  .view .mask,
+  .view .content {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0
+  }
+
+  .view img {
+    display: block;
+    position: relative
+  }
+
+  .view h2 {
+    text-transform: uppercase;
+    color: #FFF;
+    text-align: center;
+    position: relative;
+    font-size: 17px;
+    font-family: Raleway, serif;
+    padding: 10px;
+    margin: 20px 0 0 0
+  }
+
+  .view p {
+    font-family: Merriweather, serif;
+    font-style: italic;
+    font-size: 14px;
+    position: relative;
+    color: #fff;
+    padding: 0px 20px 0px;
+    text-align: center
+  }
+
+  .view a.info {
+    display: inline-block;
+    text-decoration: none;
+    padding: 7px 14px;
+    background: #000;
+    color: #fff;
+    font-family: Raleway, serif;
+    text-transform: uppercase;
+    box-shadow: 0 0 1px #000
+  }
+
+  .view a.info:hover {
+    box-shadow: 0 0 5px #000
+  }
+
+
+  /*1*/
+
+  .view-first img {
     /*1*/
+    transition: all 0.2s linear;
+    width: 300px;
+    height: 200px;
+  }
 
-    .view-first img {
-      /*1*/
-      transition: all 0.2s linear;
-      width: 300px;
-      height: 200px;
-    }
+  .view-first .mask {
+    opacity: 0;
+    background-color: rgba(58, 1, 132, 0.44);
+    transition: all 0.4s ease-in-out;
+  }
 
-    .view-first .mask {
-      opacity: 0;
-      background-color: rgba(58, 1, 132, 0.44);
-      transition: all 0.4s ease-in-out;
-    }
+  .view-first h2 {
+    transform: translateY(-100px);
+    opacity: 0;
+    font-family: Raleway, serif;
+    transition: all 0.2s ease-in-out;
+  }
 
-    .view-first h2 {
-      transform: translateY(-100px);
-      opacity: 0;
-      font-family: Raleway, serif;
-      transition: all 0.2s ease-in-out;
-    }
+  .view-first p {
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.2s linear;
+  }
 
-    .view-first p {
-      transform: translateY(100px);
-      opacity: 0;
-      transition: all 0.2s linear;
-    }
-
-    .view-first a.info {
-      opacity: 0;
-      transition: all 0.2s ease-in-out;
-    }
+  .view-first a.info {
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+  }
 
 
-    /* */
+  /* */
 
-    .view-first:hover img {
-      transform: scale(1.1);
-    }
+  .view-first:hover img {
+    transform: scale(1.1);
+  }
 
-    .view-first:hover .mask {
-      opacity: 1;
-    }
+  .view-first:hover .mask {
+    opacity: 1;
+  }
 
-    .view-first:hover h2,
-    .view-first:hover p,
-    .view-first:hover a.info {
-      opacity: 1;
-      transform: translateY(0px);
-    }
+  .view-first:hover h2,
+  .view-first:hover p,
+  .view-first:hover a.info {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 
-    .view-first:hover p {
-      transition-delay: 0.1s;
-    }
+  .view-first:hover p {
+    transition-delay: 0.1s;
+  }
 
-    .view-first:hover a.info {
-      transition-delay: 0.2s;
-    }
-
-
-    /*2*/
-
-    .view-second img {
-      transition: all 0.2s ease-in;
-      -webkit-transition: all 0.2s ease-in;
-    }
-
-    .view-second .mask {
-      background-color: rgba(12, 19, 27, 0.6);
-      width: 300px;
-      padding: 105px;
-      height: 200px;
-      opacity: 0;
-      transform: translate(265px, 145px) rotate(45deg);
-      -webkit-transform: translate(265px, 145px) rotate(45deg);
-      transition: all 0.2s ease-in-out;
-      -webkit-transition: all 0.2s ease-in-out;
-    }
-
-    .view-second h2 {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-      font-family: Raleway, serif;
-      background: transparent;
-      margin: 20px 40px 0px 40px;
-      -webkit-transform: translate(200px, -200px);
-      transform: translate(200px, -200px);
-      -webkit-transition: all 0.2s ease-in-out;
-      transition: all 0.2s ease-in-out;
-    }
-
-    .view-second p {
-      transform: translate(-200px, 200px);
-      -webkit-transform: translate(200px, -200px);
-      transition: all 0.2s ease-in-out;
-      -webkit-transition: all 0.2s ease-in-out;
-    }
-
-    .view-second a.info {
-      transform: translate(0px, 100px);
-      -webkit-transform: translate(0px, 100px);
-      transition: all 0.2s 0.1s ease-in-out;
-      -webkit-transition: all 0.2s 0.1s ease-in-out;
-    }
+  .view-first:hover a.info {
+    transition-delay: 0.2s;
+  }
 
 
-    /* */
+  /*2*/
 
-    .view-second:hover .mask {
-      opacity: 1;
-      transform: translate(-80px, -125px) rotate(45deg);
-      -webkit-transform: translate(-80px, -125px) rotate(45deg);
-    }
+  .view-second img {
+    transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+  }
 
-    .view-second:hover h2 {
-      transform: translate(0px, 0px);
-      -webkit-transform: translate(0px, 0px);
-      transition-delay: 0.3s;
-      -webkit-transition-delay: 0.3s;
-    }
+  .view-second .mask {
+    background-color: rgba(12, 19, 27, 0.6);
+    width: 300px;
+    padding: 105px;
+    height: 200px;
+    opacity: 0;
+    transform: translate(265px, 145px) rotate(45deg);
+    -webkit-transform: translate(265px, 145px) rotate(45deg);
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+  }
 
-    .view-second:hover p {
-      transform: translate(0px, 0px);
-      -webkit-transform: translate(0px, 0px);
-      transition-delay: 0.4s;
-      -webkit-transition-delay: 0.4s;
-    }
+  .view-second h2 {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    font-family: Raleway, serif;
+    background: transparent;
+    margin: 20px 40px 0px 40px;
+    -webkit-transform: translate(200px, -200px);
+    transform: translate(200px, -200px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
 
-    .view-second:hover a.info {
-      transform: translate(0px, 0px);
-      -webkit-transform: translate(0px, 0px);
-      transition-delay: 0.5s;
-      -webkit-transition-delay: 0.5s;
-    }
+  .view-second p {
+    transform: translate(-200px, 200px);
+    -webkit-transform: translate(200px, -200px);
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+  }
+
+  .view-second a.info {
+    transform: translate(0px, 100px);
+    -webkit-transform: translate(0px, 100px);
+    transition: all 0.2s 0.1s ease-in-out;
+    -webkit-transition: all 0.2s 0.1s ease-in-out;
+  }
 
 
-    /*3*/
+  /* */
 
-    .view-tenth img {
-      transform: scaleY(1);
-      transition: all .7s ease-in-out;
-    }
+  .view-second:hover .mask {
+    opacity: 1;
+    transform: translate(-80px, -125px) rotate(45deg);
+    -webkit-transform: translate(-80px, -125px) rotate(45deg);
+  }
 
-    .view-tenth .mask {
-      background-color: rgba(255, 231, 179, 0.3);
-      transition: all 0.5s linear;
-      opacity: 0;
-    }
+  .view-second:hover h2 {
+    transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+    transition-delay: 0.3s;
+    -webkit-transition-delay: 0.3s;
+  }
 
-    .view-tenth h2 {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-      background: transparent;
-      margin: 20px 40px 0px 40px;
-      transform: scale(0);
-      color: #333;
-      transition: all 0.5s linear;
-      opacity: 0;
-    }
+  .view-second:hover p {
+    transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+    transition-delay: 0.4s;
+    -webkit-transition-delay: 0.4s;
+  }
 
-    .view-tenth p {
-      color: #333;
-      opacity: 0;
-      transform: scale(0);
-      transition: all 0.5s linear;
-      padding-
-    }
+  .view-second:hover a.info {
+    transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+    transition-delay: 0.5s;
+    -webkit-transition-delay: 0.5s;
+  }
 
-    .view-tenth a.info {
-      opacity: 0;
-      transform: scale(0);
-      transition: all 0.5s linear;
-    }
 
-    .view-tenth:hover img {
-      -webkit-transform: scale(10);
-      transform: scale(10);
-      opacity: 0;
-    }
+  /*3*/
 
-    .view-tenth:hover .mask {
-      opacity: 1;
-    }
+  .view-tenth img {
+    transform: scaleY(1);
+    transition: all .7s ease-in-out;
+  }
 
-    .view-tenth:hover h2,
-    .view-tenth:hover p,
-    .view-tenth:hover a.info {
-      transform: scale(1);
-      opacity: 1;
-    }
+  .view-tenth .mask {
+    background-color: rgba(255, 231, 179, 0.3);
+    transition: all 0.5s linear;
+    opacity: 0;
+  }
+
+  .view-tenth h2 {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    background: transparent;
+    margin: 20px 40px 0px 40px;
+    transform: scale(0);
+    color: #333;
+    transition: all 0.5s linear;
+    opacity: 0;
+  }
+
+  .view-tenth p {
+    color: #333;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.5s linear;
+    padding-
+  }
+
+  .view-tenth a.info {
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.5s linear;
+  }
+
+  .view-tenth:hover img {
+    -webkit-transform: scale(10);
+    transform: scale(10);
+    opacity: 0;
+  }
+
+  .view-tenth:hover .mask {
+    opacity: 1;
+  }
+
+  .view-tenth:hover h2,
+  .view-tenth:hover p,
+  .view-tenth:hover a.info {
+    transform: scale(1);
+    opacity: 1;
+  }
   </style>
   <!-- End Content -->
 
@@ -932,844 +933,846 @@ function colour() {
         slides[slideIndex-1].style.display = "block";
         dots[slideIndex-1].className += " active";
       }
-    </script>
+      </script>
 
-  </body>
-  </html>
+    </body>
+    </html>
 
 
-  <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-    body {
-      font-family: cursive;
-    }
-
-    .glow {
-      font-size: 80px;
-      color: #0000FF;
-      text-align: center;
-      animation: glow 1s ease-in-out infinite alternate;
-    }
-
-    @-webkit-keyframes glow {
-      from {
-        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    <html>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+      body {
+        font-family: cursive;
       }
 
-      to {
-        text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+      .glow {
+        font-size: 80px;
+        color: #0000FF;
+        text-align: center;
+        animation: glow 1s ease-in-out infinite alternate;
       }
-    }
-  </style>
-</head>
-<body>
 
-  <h1 class="glow">Change Text</h1>
-
-</body>
-</html>
-
-
-
-Profile Cards Of Students
-<div id="people">
-
-  <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .flip-card {
-      background-color: transparent;
-      width: 300px;
-      height: 300px;
-      perspective: 1000px;
-    }
-
-    .flip-card-inner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      transition: transform 0.6s;
-      transform-style: preserve-3d;
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    }
-
-    .flip-card:hover .flip-card-inner {
-      transform: rotateY(180deg);
-    }
-
-    .flip-card-front, .flip-card-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-    }
-
-    .flip-card-front {
-      background-color: #bbb;
-      color: black;
-    }
-
-    .flip-card-back {
-      background-color: #2980b9;
-      color: white;
-      transform: rotateY(180deg);
-    }
-    </style>
-  </head>
-  <body>
-
-    <h1>Student Cards</h1>
-    <h3>Hover over the cards for a description:</h3>
-
-    <!---Ahmad--->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
-        </div>
-        <div class="flip-card-back">
-          <h1>Ahmad</h1>
-          <p>Role: Student</p>
-          <p>Grade: 6</p>
-          <p>Birthday: xxx</p>
-          <p>Cool Fact/Talent: xxx</p>
-        </div>
-      </div>
-    </div>
-    .
-
-    <!---Ajay--->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
-        </div>
-        <div class="flip-card-back">
-          <h1>Ajay</h1>
-          <p>Role: Student</p>
-          <p>Grade: 7</p>
-          <p>Birthday: xxx</p>
-          <p>Cool Fact/Talent: xxx</p>
-        </div>
-      </div>
-    </div>
-    .
-
-    <!---Angela--->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" style="width:300px;height:300px;">
-        </div>
-        <div class="flip-card-back">
-          <h1>Angela</h1>
-          <p>Role: Student</p>
-          <p>Grade: 7</p>
-          <p>Birthday: xxx</p>
-          <p>Cool Fact/Talent: xxx</p>
-        </div>
-      </div>
-    </div>
-    .
-
-    <!---April--->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" style="width:300px;height:300px;">
-        </div>
-        <div class="flip-card-back">
-          <h1>April</h1>
-          <p>Role: Student</p>
-          <p>Grade: 6</p>
-          <p>Birthday: xxx</p>
-          <p>Cool Fact/Talent: xxx</p>
-        </div>
-      </div>
-    </div>
-    .
-
-    <!---Ashvin--->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
-        </div>
-        <div class="flip-card-back">
-          <h1>Ashvin</h1>
-          <p>Role: Student</p>
-          <p>Grade: 6</p>
-          <p>Birthday: xxx</p>
-          <p>Cool Fact/Fact/Talent: xxx</p>
-        </div>
-      </div>
-    </div>
-    .
-
-    <!---Austin--->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
-        </div>
-        <div class="flip-card-back">
-          <h1>Austin</h1>
-          <p>Role: Student</p>
-          <p>Grade: 7</p>
-          <p>Birthday: xxx</p>
-          <p>Cool Fact/Talent: xxx</p>
-        </div>
-      </div>
-    </div>
-    .
-
-    <!---Christy--->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" style="width:300px;height:300px;">
-        </div>
-        <div class="flip-card-back">
-          <h1>Christy</h1>
-          <p>Role: Student</p>
-          <p>Grade: 7</p>
-          <p>Birthday: xxx</p>
-          <p>Cool Fact/Talent: xxx</p>
-        </div>
-      </div>
-    </div>
-    .
-
-    <!---Darren--->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
-        </div>
-        <div class="flip-card-back">
-          <h1>Darren</h1>
-          <p>Role: Student</p>
-          <p>Grade: 7</p>
-          <p>Birthday: January 1st</p>
-          <p>Cool Fact/Talent: He Helped Make This Website</p>
-        </div>
-      </div>
-    </div>
-    .
-
-    <!---Dinushan--->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
-        </div>
-        <div class="flip-card-back">
-          <h1>Dinushan</h1>
-          <p>Role: Student</p>
-          <p>Grade: 6</p>
-          <p>Birthday: xxx</p>
-          <p>Cool Fact/Talent: xxx</p>
-        </div>
-      </div>
-    </div>
-    .
-
-    <!---Dylan--->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
-        </div>
-        <div class="flip-card-back">
-          <h1>Dylan</h1>
-          <p>Role: Student</p>
-          <p>Grade: 7</p>
-          <p>Birthday: xxx</p>
-          <p>Cool Fact/Talent: xxx</p>
-        </div>
-      </div>
-    </div>
-    .
-
-    <!---Eyaad--->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
-        </div>
-        <div class="flip-card-back">
-          <h1>Eyaad</h1>
-          <p>Role: Student</p>
-          <p>Grade: 7</p>
-          <p>Birthday: xxx</p>
-          <p>Cool Fact/Talent: xxx</p>
-        </div>
-      </div>
-    </div>
-    .
-
-    <!---Fiona--->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" style="width:300px;height:300px;">
-        </div>
-        <div class="flip-card-back">
-          <h1>Fiona</h1>
-          <p>Role: Student</p>
-          <p>Grade: 6</p>
-          <p>Birthday: xxx</p>
-          <p>Cool Fact/Talent: xxx</p>
-        </div>
-      </div>
-    </div>
-    .
-
-    <!---Jacky--->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
-        </div>
-        <div class="flip-card-back">
-          <h1>Jacky</h1>
-          <p>Role: Student</p>
-          <p>Grade: 6</p>
-          <p>Birthday: xxx</p>
-          <p>Cool Fact/Talent: xxx</p>
-        </div>
-      </div>
-    </div>
-    .
-
-    <!---Justin--->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
-        </div>
-        <div class="flip-card-back">
-          <h1>Justin</h1>
-          <p>Role: Student</p>
-          <p>Grade: 7</p>
-          <p>Birthday: xxx</p>
-          <p>Cool Fact/Talent: xxx</p>
-        </div>
-      </div>
-    </div>
-    .
-
-    <!---Kahmani--->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
-        </div>
-        <div class="flip-card-back">
-          <h1>Kahmani</h1>
-          <p>Role: Student</p>
-          <p>Grade: 7</p>
-          <p>Birthday: xxx</p>
-          <p>Cool Fact/Talent: xxx</p>
-        </div>
-      </div>
-    </div>
-    .
-
-    <!---Kaylyn--->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" style="width:300px;height:300px;">
-        </div>
-        <div class="flip-card-back">
-          <h1>Kaylyn</h1>
-          <p>Role: Student</p>
-          <p>Grade: 6</p>
-          <p>Birthday: xxx</p>
-          <p>Cool Fact/Talent: xxx</p>
-        </div>
-      </div>
-    </div>
-    .
-
-    <!---Lawrence--->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
-        </div>
-        <div class="flip-card-back">
-          <h1>Lawrence</h1>
-          <p>Role: Student</p>
-          <p>Grade: 7</p>
-          <p>Birthday: xxx</p>
-          <p>Cool Fact/Talent: xxx</p>
-        </div>
-      </div>
-    </div>
-    .
-
-    <!---Maggie--->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" style="width:300px;height:300px;">
-        </div>
-        <div class="flip-card-back">
-          <h1>Maggie</h1>
-          <p>Role: Student</p>
-          <p>Grade: </p>
-          <p>Birthday: xxx</p>
-          <p>Cool Fact/Talent: xxx</p>
-        </div>
-      </div>
-    </div>
-    .
-
-    <!---Max--->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
-        </div>
-        <div class="flip-card-back">
-          <h1>Max</h1>
-          <p>Role: Student</p>
-          <p>Grade: 7</p>
-          <p>Birthday: xxx</p>
-          <p>Cool Fact/Talent: xxx</p>
-        </div>
-      </div>
-    </div>
-    .
-
-    <!---Ninar--->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" style="width:300px;height:300px;">
-        </div>
-        <div class="flip-card-back">
-          <h1>Ninar</h1>
-          <p>Role: Student</p>
-          <p>Grade: 6</p>
-          <p>Birthday: xxx</p>
-          <p>Cool Fact/Talent: xxx</p>
-        </div>
-      </div>
-    </div>
-    .
-
-    <!---Noor--->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" style="width:300px;height:300px;">
-        </div>
-        <div class="flip-card-back">
-          <h1>Noor</h1>
-          <p>Role: Student</p>
-          <p>Grade: 7</p>
-          <p>Birthday: xxx</p>
-          <p>Cool Fact/Talent: xxx</p>
-        </div>
-      </div>
-    </div>
-    .
-
-    <!---Reznor--->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
-        </div>
-        <div class="flip-card-back">
-          <h1>Reznor</h1>
-          <p>Role: Student</p>
-          <p>Grade: 7</p>
-          <p>Birthday: xxx</p>
-          <p>Cool Fact/Talent: xxx</p>
-        </div>
-      </div>
-    </div>
-    .
-
-    <!---Saketh--->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
-        </div>
-        <div class="flip-card-back">
-          <h1>Saketh</h1>
-          <p>Role: Student</p>
-          <p>Grade: 6</p>
-          <p>Birthday: xxx</p>
-          <p>Cool Fact/Talent: xxx</p>
-        </div>
-      </div>
-    </div>
-    .
-
-    <!---Sambavi--->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" style="width:300px;height:300px;">
-        </div>
-        <div class="flip-card-back">
-          <h1>Sambavi</h1>
-          <p>Role: Student</p>
-          <p>Grade: 6</p>
-          <p>Birthday: xxx</p>
-          <p>Cool Fact/Talent: xxx</p>
-        </div>
-      </div>
-    </div>
-    .
-
-    <!---Serena--->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="https://i.stack.imgur.com/FJ65f.png" alt="Avatar" style="width:300px;height:300px;">
-        </div>
-        <div class="flip-card-back">
-          <h1>Serena</h1>
-          <p>Role: Student</p>
-          <p>Grade: 7</p>
-          <p>Birthday: xxx</p>
-          <p>Cool Fact/Talent: xxx</p>
-        </div>
-      </div>
-    </div>
-    .
-
-    <!---Tehya--->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
-        </div>
-        <div class="flip-card-back">
-          <h1>Tehya</h1>
-          <p>Role: Student</p>
-          <p>Grade: 7</p>
-          <p>Birthday: xxx</p>
-          <p>Cool Fact/Talent: xxx</p>
-        </div>
-      </div>
-    </div>
-    .
-
-    <!---Vanness--->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
-        </div>
-        <div class="flip-card-back">
-          <h1>Vanness</h1>
-          <p>Role: Student</p>
-          <p>Grade: 6</p>
-          <p>Birthday: xxx</p>
-          <p>Cool Fact/Talent: xxx</p>
-        </div>
-      </div>
-    </div>
-    .
-
-    <!---Yifan--->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
-        </div>
-        <div class="flip-card-back">
-          <h1>Yifan</h1>
-          <p>Role: Student</p>
-          <p>Grade: 7</p>
-          <p>Birthday: xxx</p>
-          <p>Cool Fact/Talent: xxx</p>
-        </div>
-      </div>
-    </div>
-    .
-
-    <!---Zuhair--->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
-        </div>
-        <div class="flip-card-back">
-          <h1>Zuhair</h1>
-          <p>Role: Student</p>
-          <p>Grade: 7</p>
-          <p>Birthday: xxx</p>
-          <p>Cool Fact/Talent: xxx</p>
-        </div>
-      </div>
-    </div>
-    <br><br>
-    <div id="text">
-
-      <html>
-      <body>
-
-        <button style="color: black" onclick="typeWriter()">What Is This Class?</button>
-
-        <p id="demo"></p>
-
-        <script>
-        var i = 0;
-        var txt = '... The Best Class';
-        var speed = 50;
-
-        function typeWriter() {
-          if (i < txt.length) {
-            document.getElementById("demo").innerHTML += txt.charAt(i);
-            i++;
-            setTimeout(typeWriter, speed);
-          }
+      @-webkit-keyframes glow {
+        from {
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
         }
-        </script>
 
-      </body>
-      </html>
+        to {
+          text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+        }
+      }
+      </style>
+    </head>
+    <body>
+
+      <h1 class="glow">Change Text</h1>
+
+    </body>
+    </html>
 
 
+
+    Profile Cards Of Students
+    <div id="people">
 
       <html>
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
-        .container {
-          height: 200px;
-          position: relative;
-          border: 3px solid green;
+        body {
+          font-family: Arial, Helvetica, sans-serif;
         }
 
-        .center {
-          margin: 0;
+        .flip-card {
+          background-color: transparent;
+          width: 300px;
+          height: 300px;
+          perspective: 1000px;
+        }
+
+        .flip-card-inner {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          transition: transform 0.6s;
+          transform-style: preserve-3d;
+          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        }
+
+        .flip-card:hover .flip-card-inner {
+          transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
           position: absolute;
-          top: 50%;
-          left: 50%;
-          -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+          width: 100%;
+          height: 100%;
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+        }
+
+        .flip-card-front {
+          background-color: #bbb;
+          color: black;
+        }
+
+        .flip-card-back {
+          background-color: #2980b9;
+          color: white;
+          transform: rotateY(180deg);
         }
         </style>
       </head>
       <body>
 
+        <h1>Student Cards</h1>
+        <h3>Hover over the cards for a description:</h3>
 
-        <div class="container">
-          <div class="center">
-            <p>Put Text Here:</p>
+        <!---Ahmad--->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>Ahmad</h1>
+              <p>Role: Student</p>
+              <p>Grade: 6</p>
+              <p>Birthday: xxx</p>
+              <p>Cool Fact/Talent: xxx</p>
+            </div>
           </div>
         </div>
+        .
 
-      </body>
-      </html>
-      <br><br>
-      <html>
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style>
-        .collapsible {
-          background-color: #808080;
-          color: white;
-          cursor: pointer;
-          padding: 18px;
-          width: 100%;
-          border: none;
-          text-align: left;
-          outline: none;
-          font-size: 15px;
-        }
-
-        .active, .collapsible:hover {
-          background-color: darkgreen;
-        }
-
-        .content {
-          padding: 0 18px;
-          display: none;
-          overflow: hidden;
-          background-color: #1E90FF;
-        }
-      </style>
-    </head>
-    <body>
-
-      <button type="button" class="collapsible">Open Section 1</button>
-      <div class="content">
-        <p>Hello</p>
-      </div>
-      <button type="button" class="collapsible">Open Section 2</button>
-      <div class="content">
-        <p>Change Text</p>
-      </div>
-      <button type="button" class="collapsible">Open Section 3</button>
-      <div class="content">
-        <p>TestingTestingTestingTestingTestingTestingTesting
-          TestingTestingTestingTestingTestingTestingTestingTestingTestingTesting
-          TestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTesting
-          TestingTesting</p>
+        <!---Ajay--->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>Ajay</h1>
+              <p>Role: Student</p>
+              <p>Grade: 7</p>
+              <p>Birthday: xxx</p>
+              <p>Cool Fact/Talent: xxx</p>
+            </div>
+          </div>
         </div>
+        .
 
-        <script>
-        var coll = document.getElementsByClassName("collapsible");
-        var i;
+        <!---Angela--->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>Angela</h1>
+              <p>Role: Student</p>
+              <p>Grade: 7</p>
+              <p>Birthday: xxx</p>
+              <p>Cool Fact/Talent: xxx</p>
+            </div>
+          </div>
+        </div>
+        .
 
-        for (i = 0; i < coll.length; i++) {
-          coll[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var content = this.nextElementSibling;
-            if (content.style.display === "block") {
-              content.style.display = "none";
-            } else {
-              content.style.display = "block";
+        <!---April--->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>April</h1>
+              <p>Role: Student</p>
+              <p>Grade: 6</p>
+              <p>Birthday: xxx</p>
+              <p>Cool Fact/Talent: xxx</p>
+            </div>
+          </div>
+        </div>
+        .
+
+        <!---Ashvin--->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>Ashvin</h1>
+              <p>Role: Student</p>
+              <p>Grade: 6</p>
+              <p>Birthday: xxx</p>
+              <p>Cool Fact/Fact/Talent: xxx</p>
+            </div>
+          </div>
+        </div>
+        .
+
+        <!---Austin--->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>Austin</h1>
+              <p>Role: Student</p>
+              <p>Grade: 7</p>
+              <p>Birthday: xxx</p>
+              <p>Cool Fact/Talent: xxx</p>
+            </div>
+          </div>
+        </div>
+        .
+
+        <!---Christy--->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>Christy</h1>
+              <p>Role: Student</p>
+              <p>Grade: 7</p>
+              <p>Birthday: xxx</p>
+              <p>Cool Fact/Talent: xxx</p>
+            </div>
+          </div>
+        </div>
+        .
+
+        <!---Darren--->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>Darren</h1>
+              <p>Role: Student</p>
+              <p>Grade: 7</p>
+              <p>Birthday: January 1st</p>
+              <p>Cool Fact/Talent: He Helped Make This Website</p>
+            </div>
+          </div>
+        </div>
+        .
+
+        <!---Dinushan--->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>Dinushan</h1>
+              <p>Role: Student</p>
+              <p>Grade: 6</p>
+              <p>Birthday: xxx</p>
+              <p>Cool Fact/Talent: xxx</p>
+            </div>
+          </div>
+        </div>
+        .
+
+        <!---Dylan--->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>Dylan</h1>
+              <p>Role: Student</p>
+              <p>Grade: 7</p>
+              <p>Birthday: xxx</p>
+              <p>Cool Fact/Talent: xxx</p>
+            </div>
+          </div>
+        </div>
+        .
+
+        <!---Eyaad--->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>Eyaad</h1>
+              <p>Role: Student</p>
+              <p>Grade: 7</p>
+              <p>Birthday: xxx</p>
+              <p>Cool Fact/Talent: xxx</p>
+            </div>
+          </div>
+        </div>
+        .
+
+        <!---Fiona--->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>Fiona</h1>
+              <p>Role: Student</p>
+              <p>Grade: 6</p>
+              <p>Birthday: xxx</p>
+              <p>Cool Fact/Talent: xxx</p>
+            </div>
+          </div>
+        </div>
+        .
+
+        <!---Jacky--->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>Jacky</h1>
+              <p>Role: Student</p>
+              <p>Grade: 6</p>
+              <p>Birthday: xxx</p>
+              <p>Cool Fact/Talent: xxx</p>
+            </div>
+          </div>
+        </div>
+        .
+
+        <!---Justin--->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>Justin</h1>
+              <p>Role: Student</p>
+              <p>Grade: 7</p>
+              <p>Birthday: xxx</p>
+              <p>Cool Fact/Talent: xxx</p>
+            </div>
+          </div>
+        </div>
+        .
+
+        <!---Kahmani--->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>Kahmani</h1>
+              <p>Role: Student</p>
+              <p>Grade: 7</p>
+              <p>Birthday: xxx</p>
+              <p>Cool Fact/Talent: xxx</p>
+            </div>
+          </div>
+        </div>
+        .
+
+        <!---Kaylyn--->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>Kaylyn</h1>
+              <p>Role: Student</p>
+              <p>Grade: 6</p>
+              <p>Birthday: xxx</p>
+              <p>Cool Fact/Talent: xxx</p>
+            </div>
+          </div>
+        </div>
+        .
+
+        <!---Lawrence--->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>Lawrence</h1>
+              <p>Role: Student</p>
+              <p>Grade: 7</p>
+              <p>Birthday: xxx</p>
+              <p>Cool Fact/Talent: xxx</p>
+            </div>
+          </div>
+        </div>
+        .
+
+        <!---Maggie--->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>Maggie</h1>
+              <p>Role: Student</p>
+              <p>Grade: </p>
+              <p>Birthday: xxx</p>
+              <p>Cool Fact/Talent: xxx</p>
+            </div>
+          </div>
+        </div>
+        .
+
+        <!---Max--->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>Max</h1>
+              <p>Role: Student</p>
+              <p>Grade: 7</p>
+              <p>Birthday: xxx</p>
+              <p>Cool Fact/Talent: xxx</p>
+            </div>
+          </div>
+        </div>
+        .
+
+        <!---Ninar--->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>Ninar</h1>
+              <p>Role: Student</p>
+              <p>Grade: 6</p>
+              <p>Birthday: xxx</p>
+              <p>Cool Fact/Talent: xxx</p>
+            </div>
+          </div>
+        </div>
+        .
+
+        <!---Noor--->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>Noor</h1>
+              <p>Role: Student</p>
+              <p>Grade: 7</p>
+              <p>Birthday: xxx</p>
+              <p>Cool Fact/Talent: xxx</p>
+            </div>
+          </div>
+        </div>
+        .
+
+        <!---Reznor--->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>Reznor</h1>
+              <p>Role: Student</p>
+              <p>Grade: 7</p>
+              <p>Birthday: xxx</p>
+              <p>Cool Fact/Talent: xxx</p>
+            </div>
+          </div>
+        </div>
+        .
+
+        <!---Saketh--->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>Saketh</h1>
+              <p>Role: Student</p>
+              <p>Grade: 6</p>
+              <p>Birthday: xxx</p>
+              <p>Cool Fact/Talent: xxx</p>
+            </div>
+          </div>
+        </div>
+        .
+
+        <!---Sambavi--->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>Sambavi</h1>
+              <p>Role: Student</p>
+              <p>Grade: 6</p>
+              <p>Birthday: xxx</p>
+              <p>Cool Fact/Talent: xxx</p>
+            </div>
+          </div>
+        </div>
+        .
+
+        <!---Serena--->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://i.stack.imgur.com/FJ65f.png" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>Serena</h1>
+              <p>Role: Student</p>
+              <p>Grade: 7</p>
+              <p>Birthday: xxx</p>
+              <p>Cool Fact/Talent: xxx</p>
+            </div>
+          </div>
+        </div>
+        .
+
+        <!---Tehya--->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>Tehya</h1>
+              <p>Role: Student</p>
+              <p>Grade: 7</p>
+              <p>Birthday: xxx</p>
+              <p>Cool Fact/Talent: xxx</p>
+            </div>
+          </div>
+        </div>
+        .
+
+        <!---Vanness--->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>Vanness</h1>
+              <p>Role: Student</p>
+              <p>Grade: 6</p>
+              <p>Birthday: xxx</p>
+              <p>Cool Fact/Talent: xxx</p>
+            </div>
+          </div>
+        </div>
+        .
+
+        <!---Yifan--->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>Yifan</h1>
+              <p>Role: Student</p>
+              <p>Grade: 7</p>
+              <p>Birthday: xxx</p>
+              <p>Cool Fact/Talent: xxx</p>
+            </div>
+          </div>
+        </div>
+        .
+
+        <!---Zuhair--->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>Zuhair</h1>
+              <p>Role: Student</p>
+              <p>Grade: 7</p>
+              <p>Birthday: xxx</p>
+              <p>Cool Fact/Talent: xxx</p>
+            </div>
+          </div>
+        </div>
+        <br><br>
+        <div id="text">
+
+          <html>
+          <body>
+
+            <button style="color: black" onclick="typeWriter()">What Is This Class?</button>
+
+            <p id="demo"></p>
+
+            <script>
+            var i = 0;
+            var txt = '... The Best Class';
+            var speed = 50;
+
+            function typeWriter() {
+              if (i < txt.length) {
+                document.getElementById("demo").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+              }
             }
-          });
-        }
-        </script>
+            </script>
 
-        <html>
-        <head>
-        </head>
-        <body>
-          <br><br><br>
+          </body>
+          </html>
 
 
 
-
-
-          <center><h1>Did You Enjoy This Website?</h1></center>
-          <center>
-            <script src="https://use.fontawesome.com/fe459689b4.js"></script>
-            <button class="btn" id="green"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
-            <button class="btn" id="red"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></button>
-          </center>
-
-          <style>
-          body{
-            margin: 40px;
-          }
-
-          button{
-            cursor: pointer;
-            outline: 0;
-            color: #AAA;
-
-          }
-
-          .btn:focus {
-            outline: none;
-          }
-
-          .green{
-            color: green;
-          }
-
-          .red{
-            color: red;
-          }
-          </style>
-          <script>
-          var btn1 = document.querySelector('#green');
-          var btn2 = document.querySelector('#red');
-
-          btn1.addEventListener('click', function() {
-
-            if (btn2.classList.contains('red')) {
-              btn2.classList.remove('red');
-            }
-            this.classList.toggle('green');
-
-          });
-
-          btn2.addEventListener('click', function() {
-
-            if (btn1.classList.contains('green')) {
-              btn1.classList.remove('green');
-            }
-            this.classList.toggle('red');
-
-          });
-
-
-          </script>
-
-          <br><center><form
-            action="https://docs.google.com/forms/d/e/1FAIpQLSfwKRwQXTG4f-uTCKfayO3jXKkxtIruVwdHgyx56p4xwpKylA/viewform?vc=0&c=0&w=1&flr=0">
-            <input type = "submit" value="If You Want To Make A Complaint, Press This Button" /></center>
-
-
+          <html>
+          <head>
             <style>
-            html {
-              height: 100%;
-              box-sizing: border-box;
-            }
-
-            *,
-            *:before,
-            *:after {
-              box-sizing: inherit;
-            }
-
-            body {
+            .container {
+              height: 200px;
               position: relative;
+              border: 3px solid green;
+            }
+
+            .center {
               margin: 0;
-              padding-bottom: 6rem;
-              min-height: 100%;
-              font-family: "Helvetica Neue", Arial, sans-serif;
-            }
-
-            .demo {
-              margin: 0 auto;
-              padding-top: 32px;
-              max-width: 640px;
-              width: 100%;
-            }
-
-            .demo h1 {
-              margin-top: 0;
-            }
-
-            /**
-            * Footer Styles
-            */
-
-            .footer {
               position: absolute;
-              right: 0;
-              bottom: 0;
-              left: 0;
-              padding: 1rem;
-              background-color: #0091ff;
-              text-align: center;
+              top: 50%;
+              left: 50%;
+              -ms-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
             }
             </style>
+          </head>
+          <body>
 
-            <div class="footer">This website was made by <strong>Darren And Austin</strong></div>
+
+            <div class="container">
+              <div class="center">
+                <p>Put Text Here:</p>
+              </div>
+            </div>
+
+          </body>
+          </html>
+          <br><br>
+          <html>
+          <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <style>
+            .collapsible {
+              background-color: #808080;
+              color: white;
+              cursor: pointer;
+              padding: 18px;
+              width: 100%;
+              border: none;
+              text-align: left;
+              outline: none;
+              font-size: 15px;
+            }
+
+            .active, .collapsible:hover {
+              background-color: darkgreen;
+            }
+
+            .content {
+              padding: 0 18px;
+              display: none;
+              overflow: hidden;
+              background-color: #1E90FF;
+            }
+            </style>
+          </head>
+          <body>
+
+            <button type="button" class="collapsible">Open Section 1</button>
+            <div class="content">
+              <p>Hello</p>
+            </div>
+            <button type="button" class="collapsible">Open Section 2</button>
+            <div class="content">
+              <p>Change Text</p>
+            </div>
+            <button type="button" class="collapsible">Open Section 3</button>
+            <div class="content">
+              <p>TestingTestingTestingTestingTestingTestingTesting
+                TestingTestingTestingTestingTestingTestingTestingTestingTestingTesting
+                TestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTesting
+                TestingTesting</p>
+              </div>
+
+              <script>
+              var coll = document.getElementsByClassName("collapsible");
+              var i;
+
+              for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                  this.classList.toggle("active");
+                  var content = this.nextElementSibling;
+                  if (content.style.display === "block") {
+                    content.style.display = "none";
+                  } else {
+                    content.style.display = "block";
+                  }
+                });
+              }
+              </script>
+
+              <html>
+              <head>
+              </head>
+              <body>
+                <br><br><br>
 
 
 
-            <!--Chat Bot-->
 
-            <script SameSite="None; Secure" src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.js"></script>
-            <script>
-            var myLandbot = new Landbot.Popup({
-              configUrl: 'https://chats.landbot.io/v3/H-1156499-SXEMNR4BDSZZUJCD/index.json',
-            });
-          </script>
+
+                <center><h1>Did You Enjoy This Website?</h1></center>
+                <center>
+                  <script src="https://use.fontawesome.com/fe459689b4.js"></script>
+                  <button class="btn" id="green"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
+                  <button class="btn" id="red"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></button>
+                </center>
+
+                <style>
+                body{
+                  margin: 40px;
+                }
+
+                button{
+                  cursor: pointer;
+                  outline: 0;
+                  color: #AAA;
+
+                }
+
+                .btn:focus {
+                  outline: none;
+                }
+
+                .green{
+                  color: green;
+                }
+
+                .red{
+                  color: red;
+                }
+                </style>
+                <script>
+                var btn1 = document.querySelector('#green');
+                var btn2 = document.querySelector('#red');
+
+                btn1.addEventListener('click', function() {
+
+                  if (btn2.classList.contains('red')) {
+                    btn2.classList.remove('red');
+                  }
+                  this.classList.toggle('green');
+
+                });
+
+                btn2.addEventListener('click', function() {
+
+                  if (btn1.classList.contains('green')) {
+                    btn1.classList.remove('green');
+                  }
+                  this.classList.toggle('red');
+
+                });
+
+
+                </script>
+
+                <br><center><form
+                  action="https://docs.google.com/forms/d/e/1FAIpQLSfwKRwQXTG4f-uTCKfayO3jXKkxtIruVwdHgyx56p4xwpKylA/viewform?vc=0&c=0&w=1&flr=0">
+                  <input type = "submit" value="If You Want To Make A Complaint, Press This Button" /></center>
+
+
+                  <style>
+                  html {
+                    height: 100%;
+                    box-sizing: border-box;
+                  }
+
+                  *,
+                  *:before,
+                  *:after {
+                    box-sizing: inherit;
+                  }
+
+                  body {
+                    position: relative;
+                    margin: 0;
+                    padding-bottom: 6rem;
+                    min-height: 100%;
+                    font-family: "Helvetica Neue", Arial, sans-serif;
+                  }
+
+                  .demo {
+                    margin: 0 auto;
+                    padding-top: 32px;
+                    max-width: 640px;
+                    width: 100%;
+                  }
+
+                  .demo h1 {
+                    margin-top: 0;
+                  }
+
+                  /**
+                  * Footer Styles
+                  */
+
+                  .footer {
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    padding: 1rem;
+                    background-color: #0091ff;
+                    text-align: center;
+                  }
+                  </style>
+
+                  <div class="footer">This website was made by <strong>Darren And Austin</strong></div>
+
+
+
+                  <!--Chat Bot-->
+
+                  <script SameSite="None; Secure" src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.js"></script>
+                  <script>
+                  var myLandbot = new Landbot.Popup({
+                    configUrl: 'https://chats.landbot.io/v3/H-1156499-SXEMNR4BDSZZUJCD/index.json',
+                  });
+                  </script>
+                  <div id="end" class="w3-content">
+<!--Wow, You Reached The End Of The Source Code! Thanks Fo Reading (Or Scrolling Through) It-->
