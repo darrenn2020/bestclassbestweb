@@ -1,100 +1,58 @@
 <!DOCTYPE html>
+<title>Password</title>
 <html>
-<head>
-  <center>
-    <h1><b><a class='center'>Welcome</a></b></h1>
-    <h3><b><a class='center'>Press The Button Below To Enter A Password</a></b></h3>
-  </center>
-  <style>
-  body{
-    background: skyblue;
-  }
-  .center{
-    color: #DD571C;
-  }
 
-  .centerTwo{
-    color: #006400;
-  }
-
-  .button{
-    border-radius: 27px;
-    background: #73AD21;
-    padding: 10px;
-    width: 150px;
-    height: 50px;
-    cursor: pointer;
-  }
-
-  input[type=text] {
-    width: 130px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 21px;
-    background-color: white;
-    background-position: 10px 10px;
-    background-repeat: no-repeat;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-  }
-
-  input[type=submit] {
-    background-color: #000000;
-    border: none;
-    color: #FFFFFF;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 16px;
-  }
-
-  input[type=submit]:hover {
-    background-color: #DDD;
-    color: #000000
-  }
-
-  input[type=text]:focus {
-    width: 50%;
-  }
-</style>
-</head>
-<body>
-
-</body>
-</html>
-
-<script>
-function validateForm() {
-  var passwd = document.forms["myForm"]["fname"].value;
-  if (passwd == '6/7Class208') {
-    window.location.href = 'w.html'
-
-  } else if(passwd == 'QuizMe') {
-    window.location.href = 'quiz.html'
-
-  } else if(passwd == 'GetMeToSeven') {
-    window.location.href = 'loader.html'
-
-  } else if(passwd == null) {
-    alert("Please Enter A Password");
-
-  }else{
-    window.location.href = 'wrong.html'
-  }
+<center>
+  <h1><b><a class='center'>Welcome</a></b></h1>
+  <h3><b><a class='center'>Press The Button Below To Enter A Password</a></b></h3>
+  <button class='button' onclick=wait()>Enter Password</button>
+</center>
+<style>
+body{
+  background: skyblue;
 }
-</script>
-<body>
-  <center>
-    <form name="myForm" action="ask()" onsubmit="return validateForm()" method="post" required>
-      <b><a class ='centerTwo'>Enter Password Here: </a></b>
-      <input placeholder="Type Here" id="myInput" type="text" name="fname">
-      <input type="submit" value="Submit">
-    </form>
-  </center>
+.center{
+  color: #DD571C;
+}
+.button{
+  border-radius: 27px;
+  background: #73AD21;
+  padding: 10px;
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+}
+</style>
+<head>
+  <script>
+  function ask(){
+    var passwd = window.prompt("Enter The Password To Get To The Greatest Website Ever: ");
+    if (passwd == '6/7Class208') {
+      window.location.href = 'w.html'
 
+    } else if(passwd == 'QuizMe') {
+      window.location.href = 'quiz.html'
+
+    } else if(passwd == '') {
+      alert('Please Enter A Password');
+
+    } else if(passwd == 'GetMeToSeven') {
+      window.location.href = 'loader.html'
+
+    } else if(passwd == null) {
+
+    }else{
+      window.location.href = 'wrong.html'
+    }
+  }
+
+  function wait(){
+    setTimeout(ask, 100);
+  }
+  </script>
+</head>
+
+<body>
 </body>
+
 </html>
